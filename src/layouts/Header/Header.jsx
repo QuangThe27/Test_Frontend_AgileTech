@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import ButtonComponet from '../../components/ButtonComponet/ButtonComponet';
+import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 
 const cx = classNames.bind(styles);
 
@@ -15,8 +15,9 @@ function Header() {
             </div>
             <div className={cx('header-actions')}>
                 {/* Not Sign In */}
-                {/* <ButtonComponet
+                {/* <ButtonComponent
                     width="209px"
+                    height='100%'
                     backgroundColor="#9c69e2"
                     border="none"
                     borderRadius="50px"
@@ -24,18 +25,24 @@ function Header() {
                 /> */}
 
                 {/* Sign in */}
-                <ButtonComponet
+                <ButtonComponent
                     width="209px"
+                    height="100%"
                     backgroundColor="#9c69e2"
                     border="none"
                     borderRadius="50px"
+                    size="1.6rem"
+                    weight="700"
                     textButton="Profile"
                 />
-                <ButtonComponet
+                <ButtonComponent
                     width="209px"
+                    height="100%"
                     backgroundColor="#9c69e2"
                     border="none"
                     borderRadius="50px"
+                    size="1.6rem"
+                    weight="700"
                     textButton="Logout"
                 />
             </div>

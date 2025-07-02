@@ -1,0 +1,39 @@
+.cart {
+    display: flex;
+    height: 100%;
+    padding: 60px 70px;
+
+    img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-right: 30px;
+    }
+}
+
+.info {
+    margin-right: 20px;
+
+    h5 {
+        font-size: 1.8rem;
+        line-height: 160%;
+        letter-spacing: 0.5%;
+        color: rgba(33, 35, 83, 1);
+    }
+
+    span {
+        font-size: 1.4rem;
+        line-height: 160%;
+        letter-spacing: 1%;
+        color: rgba(156, 105, 226, 1);
+        padding: 0;
+    }
+
+    p {
+        width: 80%;
+        font-size: 1.8rem;
+        line-height: 180%;
+        margin-top: 20px;
+        color: rgba(75, 93, 104, 1);
+    }
+}
