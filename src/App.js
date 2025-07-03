@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
 import { routes } from './routes';
+import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
+import ManageLayout from './layouts/ManageLayout/ManageLayout';
 
 function App() {
     return (
@@ -9,7 +10,7 @@ function App() {
                 <Routes>
                     {routes.map((route, index) => {
                         const Page = route.page;
-                        const Layout = DefaultLayout;
+                        const Layout = route.isManageRoute ? ManageLayout : DefaultLayout;
 
                         return (
                             <Route

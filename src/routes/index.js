@@ -4,6 +4,7 @@
 
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
+import ManageProfile from '../pages/ManageProfile/ManageProfile';
 
 export const generalRoutes = [
     {
@@ -20,7 +21,13 @@ export const generalRoutes = [
     },
 ];
 
-export const manageRoutes = [];
+export const manageRoutes = [
+    {
+        path: '/manage/profile',
+        page: ManageProfile,
+        isManageRoute: true,
+    },
+];
 
 // Routes tổng
 export const routes = [

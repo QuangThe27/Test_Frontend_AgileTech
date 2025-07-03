@@ -1,0 +1,29 @@
+.Action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.search-filters {
+    display: flex;
+    align-items: center;
+
+    .filter-input {
+        width: 368px;
+        height: 49px;
+        margin-right: 20px;
+    }
+
+    .filter-select {
+        width: 368px;
+        height: 49px;
+    }
+}
+
+.pagination-area {
+    float: right;
+    margin-top: 30px;
+}
