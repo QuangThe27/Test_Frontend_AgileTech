@@ -15,17 +15,18 @@ function Header() {
             </div>
             <div className={cx('header-actions')}>
                 {/* Not Sign In */}
-                {/* <ButtonComponent
+                <ButtonComponent
                     width="209px"
-                    height='100%'
+                    height="100%"
                     backgroundColor="#9c69e2"
                     border="none"
                     borderRadius="50px"
                     textButton="Sign In"
-                /> */}
+                    link="login"
+                />
 
                 {/* Sign in */}
-                <ButtonComponent
+                {/* <ButtonComponent
                     width="209px"
                     height="100%"
                     backgroundColor="#9c69e2"
@@ -44,7 +45,7 @@ function Header() {
                     size="1.6rem"
                     weight="700"
                     textButton="Logout"
-                />
+                /> */}
             </div>
         </div>
     );

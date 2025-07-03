@@ -16,7 +16,7 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout isShowHeader={route.isShowHeader}>
+                                    <Layout isShowHeader={route.isShowHeader} isShowFooter={route.isShowFooter}>
                                         <Page />
                                     </Layout>
                                 }
