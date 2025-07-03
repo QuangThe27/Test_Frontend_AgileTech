@@ -1,10 +1,23 @@
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import { MenuOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Header() {
+    // State để quản lý trạng thái hiển thị của mobile-list
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    // Hàm để toggle (ẩn/hiện) mobile-list
+    const handleToggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const isLoggedIn = false;
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('logo')}>
@@ -13,6 +26,7 @@ function Header() {
                     alt=""
                 />
             </div>
+
             <div className={cx('header-actions')}>
                 {/* Not Sign In */}
                 <ButtonComponent
@@ -21,6 +35,8 @@ function Header() {
                     backgroundColor="#9c69e2"
                     border="none"
                     borderRadius="50px"
+                    size="1.6rem"
+                    weight="700"
                     textButton="Sign In"
                     link="login"
                 />
@@ -46,6 +62,36 @@ function Header() {
                     weight="700"
                     textButton="Logout"
                 /> */}
+            </div>
+
+            <div className={cx('mobile-menu-icon')} onClick={handleToggleMobileMenu}>
+                <MenuOutlined style={{ fontSize: '24px', color: '#333' }} />
+            </div>
+
+            <div className={cx('mobile-list', { 'is-open': isMobileMenuOpen })}>
+                {!isLoggedIn ? (
+                    <ul>
+                        <li>
+                            <Link to="login" onClick={handleToggleMobileMenu}>
+                                Sign In
+                            </Link>{' '}
+                            {/* Thêm link và đóng menu */}
+                        </li>
+                    </ul>
+                ) : (
+                    <ul>
+                        <li>
+                            <Link to="/profile" onClick={handleToggleMobileMenu}>
+                                Profile
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/logout" onClick={handleToggleMobileMenu}>
+                                Logout
+                            </Link>
+                        </li>
+                    </ul>
+                )}
             </div>
         </div>
     );

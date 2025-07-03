@@ -1,15 +1,85 @@
 .wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 1120px;
+    max-width: 94%;
     height: 60px;
     background-color: #fff;
     margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
+
+    @media (max-width: 1020px) {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%; // Đảm bảo wrapper full width trên mobile
+    }
 }
 
 .header-actions {
     display: flex;
     align-items: center;
+
+    @media (max-width: 1020px) {
+        display: none;
+    }
+}
+
+.mobile-menu-icon {
+    cursor: pointer;
+    display: none;
+    padding: 0 10px;
+
+    @media (max-width: 1021px) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.mobile-list {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(104, 201, 186, 1);
+    margin-top: 60px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    max-height: 0; // Chiều cao ban đầu bằng 0
+    overflow: hidden; // Ẩn nội dung tràn ra
+    opacity: 0; // Ẩn hoàn toàn
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    // Khi có class 'is-open'
+    &.is-open {
+        max-height: 500px; // Đặt một giá trị đủ lớn để chứa nội dung
+        opacity: 1; // Hiển thị
+    }
+
+    // Đảm bảo chỉ hiển thị trên mobile
+    display: none;
+    @media (max-width: 1020px) {
+        display: block; // Hiển thị block trên mobile, nhưng vẫn ẩn qua max-height/opacity
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 0;
+
+        &:hover {
+            color: rgb(144, 89, 219);
+        }
+    }
 }
