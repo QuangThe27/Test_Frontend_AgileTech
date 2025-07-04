@@ -1,3 +1,23 @@
+// scroll animation khi vào viewport và lặp lại
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeUp {
+    animation: fadeUp 2s ease forwards;
+}
+
+.hidden-section {
+    opacity: 0;
+}
+
 .container {
     &.one {
         position: relative;
@@ -249,8 +269,8 @@
         &.two {
             .col {
                 p {
-                    width: auto;
-                    padding: 0 15px;
+                    width: auto; /* Allow paragraph to take full available width */
+                    padding: 0 15px; /* Add some horizontal padding for better readability */
                 }
             }
         }

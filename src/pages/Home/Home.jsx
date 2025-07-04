@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import classname from 'classnames/bind';
 import styles from './Home.module.scss';
 import { Col, Row } from 'antd';
@@ -9,9 +10,39 @@ import CartEndorserComponent from '../../components/CartEndorserComponent/CartEn
 const cx = classname.bind(styles);
 
 function Home() {
+    useEffect(() => {
+        const sections = document.querySelectorAll(`.${cx('container')}`);
+
+        //IntersectionObserver — API của trình duyệt giúp theo dõi xem một phần tử có đang nằm trong vùng hiển thị hay không.
+        const observer = new IntersectionObserver(
+            (entries) => {
+                //entries là một array chứa thông tin từng phần tử được theo dõi.
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        //true thực hiện animation
+                        entry.target.classList.add(cx('animate-fadeUp'));
+                    } else {
+                        entry.target.classList.remove(cx('animate-fadeUp'));
+                    }
+                });
+            },
+            { threshold: 0.2 }, //Khi 20% diện tích của phần tử lọt vào vùng hiển thị, thì isIntersecting mới là true
+        );
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
+
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('container', 'one')}>
+            <div className={cx('container', 'one', 'hidden-section')}>
                 <div className={cx('content')}>
                     <h1>Save your data storage here.</h1>
                     <p>
@@ -37,7 +68,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className={cx('container', 'two')}>
+            <div className={cx('container', 'two', 'hidden-section')}>
                 <Row gutter={[23, 24]} align="middle">
                     <Col sm={24} xl={11} className={cx('col')}>
                         <img
@@ -59,7 +90,7 @@ function Home() {
                 </Row>
             </div>
 
-            <div className={cx('container', 'three')}>
+            <div className={cx('container', 'three', 'hidden-section')}>
                 <div className={cx('heading')}>
                     <h2>Features</h2>
                     <p>
@@ -109,7 +140,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className={cx('container', 'four')}>
+            <div className={cx('container', 'four', 'hidden-section')}>
                 <div className={cx('box')}>
                     <h2>Testimonials</h2>
 
