@@ -2,7 +2,7 @@
 # Đóng .gitignore để làm bài test (1/7/2025)
 
 # dependencies
-# /node_modules
+/node_modules
 # /.pnp
 # .pnp.js
 

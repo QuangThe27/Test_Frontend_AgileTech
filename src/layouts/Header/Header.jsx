@@ -72,10 +72,9 @@ function Header() {
                 {!isLoggedIn ? (
                     <ul>
                         <li>
-                            <Link to="login" onClick={handleToggleMobileMenu}>
+                            <Link to="/login" onClick={handleToggleMobileMenu}>
                                 Sign In
-                            </Link>{' '}
-                            {/* Thêm link và đóng menu */}
+                            </Link>
                         </li>
                     </ul>
                 ) : (

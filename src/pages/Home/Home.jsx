@@ -38,14 +38,14 @@ function Home() {
             </div>
 
             <div className={cx('container', 'two')}>
-                <Row>
-                    <Col span={11}>
+                <Row gutter={[23, 24]} align="middle">
+                    <Col sm={24} xl={11} className={cx('col')}>
                         <img
                             src="https://warehouse-blue.vercel.app/static/media/about.1c3d05a0bef752a3afb9.png"
                             alt=""
                         />
                     </Col>
-                    <Col span={13} className={cx('col')}>
+                    <Col sm={24} xl={13} className={cx('col')}>
                         <div>
                             <h2>We are a high-level data storage bank</h2>
                             <p>
@@ -69,7 +69,7 @@ function Home() {
                 </div>
                 <div className={cx('content')}>
                     <Row gutter={[30, 30]}>
-                        <Col span={12}>
+                        <Col sm={24} xl={12}>
                             <FeatureItemComponent
                                 link="#"
                                 imgSrc="https://warehouse-blue.vercel.app/static/media/feature1.3bd68cd8e4cd29a40d80.png"
@@ -78,7 +78,7 @@ function Home() {
                                 colorBox="rgba(104, 201, 186, 1)"
                             />
                         </Col>
-                        <Col span={12}>
+                        <Col sm={24} xl={12}>
                             <FeatureItemComponent
                                 link="#"
                                 imgSrc="https://warehouse-blue.vercel.app/static/media/feature2.aa8cfbcff7c4975f6f37.png"
@@ -87,7 +87,7 @@ function Home() {
                                 colorBox="rgba(156, 105, 226, 1)"
                             />
                         </Col>
-                        <Col span={12}>
+                        <Col sm={24} xl={12}>
                             <FeatureItemComponent
                                 link="#"
                                 imgSrc="https://warehouse-blue.vercel.app/static/media/feature3.d41c5afe07c670d96f41.png"
@@ -96,7 +96,7 @@ function Home() {
                                 colorBox="rgba(240, 99, 184, 1)"
                             />
                         </Col>
-                        <Col span={12}>
+                        <Col sm={24} xl={12}>
                             <FeatureItemComponent
                                 link="#"
                                 imgSrc="https://warehouse-blue.vercel.app/static/media/feature4.821e83ecc96bd79a8e9a.png"

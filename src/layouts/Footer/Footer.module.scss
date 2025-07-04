@@ -4,9 +4,10 @@
 }
 
 .container {
-    width: 1120px;
+    max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
 
     .heading {
         margin-top: 96px;
@@ -22,7 +23,7 @@
             color: #4b5d68;
         }
 
-        a {
+        .link {
             padding: 15px 18px;
             color: #212353;
             font-size: 1.8rem;
@@ -129,6 +130,40 @@
             letter-spacing: 1%;
             font-weight: 400;
             color: rgba(33, 35, 83, 1);
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .heading {
+        h3,
+        p {
+            text-align: center;
+        }
+    }
+
+    .action {
+        display: flex;
+        justify-content: center;
+        padding-top: 48px;
+    }
+
+    .body {
+        .title,
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        p,
+        li,
+        .column-title {
+            text-align: center;
+        }
+
+        .column-title,
+        .icon-circle {
+            margin-top: 30px;
         }
     }
 }
