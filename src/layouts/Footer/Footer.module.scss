@@ -140,6 +140,11 @@
         p {
             text-align: center;
         }
+
+        .col {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .action {
